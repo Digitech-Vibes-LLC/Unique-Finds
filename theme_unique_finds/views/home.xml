@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="website_homepage_inherit_home" inherit_id="website.homepage" name="Home" customize_show="True"
+              active="True">
+        <data inherit_id="website.homepage">
+            <!--        <xpath expr="//t[@t-call='website.layout']" position="replace">-->
+            <!--            <t t-call="website.layout">-->
+            <xpath expr="//div[@id='wrap']" position="replace">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+
+                <div class="oe_structure"/>
+                <section class="s_text_image pt32 pb32 o_colored_level" data-snippet="s_image_text"
+                         data-name="Image - Text" style="background-image: none;">
+                    <div class="container">
+
+                            <div class="row" style="" data-row-count="11">
+                                <div class="col-2 text-center" style="align-self: center;">
+                                    <img class="img img-fluid mx-auto" src="/theme_unique_finds/static/src/img/butterfly.png"
+                                             alt="" loading="lazy" data-original-id="256"
+                                             data-original-src="/theme_unique_finds/static/src/img/butterfly.png"
+                                             data-mimetype="image/png" data-bs-original-title="" title=""
+                                             aria-describedby="tooltip912141" style=""/>
+                                </div>
+                                <div class="col-8">
+                                    <img class="img img-fluid mx-auto" src="/theme_unique_finds/static/src/img/logo1.png"
+                                         alt="" loading="lazy" data-original-id="256"
+                                         data-original-src="/theme_unique_finds/static/src/img/logo1.png"
+                                         data-mimetype="image/png" data-bs-original-title="" title=""
+                                         aria-describedby="tooltip912141" style=""/>
+                                    <br/>
+                                    <p>
+                                        <font class="text-o-color-3"> fnf dh fjhfg jhfgd jfgnjf jfd jfdj fdj fdj
+                                            fdjfr jsr jhsrtjh sftj sftjh sftj srtjh srftj srtj sftjsftjhsrtf jstj sftj sjsr
+                                            tjsr jrt jstrj srtj srtj srtj srtj srtj srtj srtj srtj srtjs rjsrt jsrt jsrtj
+                                            srt j
+                                            <font class="text-o-color-3"> fnf dh fjhfg jhfgd jfgnjf jfd jfdj fdj
+                                                fdj fdjfr jsr jhsrtjh sftj sftjh sftj srtjh srftj srtj sftjsftjhsrtf jstj
+                                                sftj sjsr tjsr jrt jstrj srtj srtj srtj srtj srtj srtj srtj srtj srtjs rjsrt
+                                                jsrt jsrtj srt j
+                                                <br></br>
+                                            </font>
+                                        </font>
+                                    </p>
+                                    <p>
+                                        <font class="text-o-color-3">
+                                            <font class="text-o-color-3">
+                                                <font class="text-o-color-3"> fnf dh fjhfg jhfgd jfgnjf jfd jfdj
+                                                    fdj fdj fdjfr jsr jhsrtjh sftj sftjh sftj srtjh srftj srtj sftjsftjhsrtf
+                                                    jstj sftj sjsr tjsr jrt jstrj srtj srtj srtj srtj srtj srtj srtj srtj
+                                                    srtjs rjsrt jsrt jsrtj srt
+                                                </font>
+                                            </font>
+                                        </font>
+                                    </p>
+                                    <p></p>
+                                    <a href="" class="mb-2 btn btn-fill-primary rounded-circle o_anim_fade_in o_animate o_visible o_animated"
+                                       data-bs-original-title="" title=""
+                                       style="animation-name: o_anim_fade_in; animation-play-state: running; visibility: visible;">
+                                        <span style="font-size: 18px;">
+                                            <font class="text-black">Start Niow</font>
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="col-2 pt-5 text-center">
+                                    <img class="img img-fluid mx-auto" src="/theme_unique_finds/static/src/img/butterfly.png"
+                                             alt="" loading="lazy" data-original-id="256"
+                                             data-original-src="/theme_unique_finds/static/src/img/butterfly.png"
+                                             data-mimetype="image/png" data-bs-original-title="" title=""
+                                             aria-describedby="tooltip912141" style=""/>
+                                </div>
+                            </div>
+
+                    </div>
+                </section>
+                <div class="oe_structure"/>
+
+            </xpath>
+        </data>
+    </template>
+</odoo>

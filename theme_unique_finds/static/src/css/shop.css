@@ -1,0 +1,54 @@
+.o_wsale_products_main_row {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: #FF75AD;
+
+}
+
+.products_header .text-bg-light {
+    color: #212529 !important;
+    background: transparent !important;;
+}
+
+.input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.o_dropdown_menu), .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n + 3) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 2px solid #FF75AD !important;
+}
+
+.input-group > :not(:first-child):not(.dropdown-menu):not(.o_dropdown_menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: transparent;
+    color: #FF75AD;
+    border: 2px solid #FF75AD;
+    border-left: 0;
+}
+
+.o_pricelist_dropdown .dropdown-toggle{
+    color: #FF75AD;
+    background: transparent;
+    border: 2px solid #FF75AD;
+}
+
+.o_sortby_dropdown .text-muted{
+    color: #FF75AD !important;
+}
+.o_sortby_dropdown .dropdown-toggle{
+    color: #FF75AD;
+    background: transparent;
+    border: 2px solid #FF75AD;
+}
+
+.o_wsale_apply_layout .o_wsale_apply_list,.o_wsale_apply_grid {
+    color: #FF75AD !important;
+    background: transparent !important;
+    border: 2px solid #FF75AD !important;
+}
+
+.o_wsale_filmstip li .btn-light {
+    color: #FF75AD !important;
+    background: transparent !important;
+    border: 0px;
+}

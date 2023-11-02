@@ -1,0 +1,15 @@
+<odoo>
+    <template id="custom_bg_image" name="Frontend Layout Image" inherit_id="web.frontend_layout">
+        <xpath expr="//div[@id='wrapwrap']/header" position="after">
+            <div class="row">
+<!--                <img src="/theme_unique_finds/static/src/img/logo1.png" style="animation: fa-spin 1s infinite steps(12);"/>-->
+                <img src="/theme_unique_finds/static/src/img/logo1.png" class="beat-img" style=""/>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='wrapwrap']" position="attributes">
+            <attribute name="t-attf-style">
+                #{"background: transparent url('/theme_unique_finds/static/src/img/WebBkg.svg') no-repeat scroll center center / cover;"}
+            </attribute>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,27 @@
+.body_login .card{
+    margin: 0% 10% 6% 10% !important;
+    background: transparent !important;
+}
+.body_login .card .card-body{
+    background: transparent !important;
+}
+.body_login {
+    display: inline-block;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    opacity:0.9;
+}
+.background-login{
+    background-image: url(/theme_unique_finds/static/src/img/login-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.oe_login_form, .oe_signup_form, .oe_reset_password_form {
+    max-width: min-content !important;
+    position: relative !important;
+    margin: 0px auto !important;
+}

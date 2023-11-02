@@ -1,0 +1,38 @@
+.navbar span,a,h1,h2,h3,strong,.dropdown-toggle{
+    color:white;
+
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-weight: 600;
+}
+/*.navbar .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid white;
+  border-bottom: 0;
+  border-left: 0.3em solid white;
+}*/
+.navbar {
+    background: transparent;
+}
+
+.beat-img {
+    width: min-content;
+    height: min-content;
+    background: transparent;
+    position: relative;
+    margin-left: 10%;
+	animation: beat-animation 5s infinite alternate;
+	transform-origin: center;
+    opacity: 0.4
+}
+
+/* Heart beat animation */
+@keyframes beat-animation{
+	to { transform: scale(0.9);
+         opacity: 1}
+}

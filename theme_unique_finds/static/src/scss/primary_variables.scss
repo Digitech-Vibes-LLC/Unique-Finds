@@ -1,0 +1,10 @@
+/*.o_website_preview html body{
+    background-image:url(/theme_unique_finds/static/src/img/HomeBackground.jpg)!important;
+
+    &:before {
+        content: '';
+         background-image:url(/theme_unique_finds/static/src/img/content/HomeBackground.jpg)!important;
+        background-size: cover;
+        position:relative;
+    }
+}*/

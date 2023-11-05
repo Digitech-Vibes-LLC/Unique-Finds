@@ -1,0 +1,31 @@
+#product_details .text-muted{
+    --text-opacity: 1;
+    color: white !important;
+}
+#product_details h1{
+    color: #FF75AD !important;
+}
+#product_details p span a div{
+    color:white !important;
+}
+.o_product_terms_and_share p span a div{
+    color:white !important;
+}
+.product-details-hr{
+    color: #A6A8E0;
+    margin: 5% 0px 3% 0px;
+    padding-top: 3px;
+    opacity: 0.6;
+}
+.s_share a{
+    color: white !important;
+}
+.s_share_pinterest i{
+    color: white !important;
+}
+.s_share_twitter i{
+    color: white !important;
+}
+.s_share_facebook i{
+    color: white !important;
+}

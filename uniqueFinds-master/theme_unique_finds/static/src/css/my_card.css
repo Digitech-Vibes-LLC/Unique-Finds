@@ -1,0 +1,14 @@
+.progress-wizard-steplabel{
+    color:white !important;
+}
+
+.btn-secondary, .btn-secondary {
+    color: #FFFFFF;
+    background-color: #A6A8E0 !important;
+    border-color: #A6A8E0 !important;
+}
+.btn-fill-secondary:hover, .btn-secondary:hover {
+    color: #FFFFFF;
+    background-color: #A6A8E0;
+    border-color: #A6A8E0f;
+}

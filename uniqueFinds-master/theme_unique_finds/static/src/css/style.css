@@ -1,0 +1,87 @@
+#wrapwrap {
+    z-index: 0;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    overflow-x: hidden;
+    overflow-y: auto ;
+}
+.uf-pink{
+    color: #FF75AD;
+}
+.btn-fill-primary, .btn-primary {
+    color: #FFFFFF;
+    background-color: #FF75AD !important;
+    border-color: #FF75AD !important;
+}
+a:hover{
+    color: #A6A8E0 !important;
+}
+.btn-primary, .btn_cta{
+    color: white !important;
+    background-color: #FF75AD !important;
+    border-color: #FF75AD !important;
+}
+.btn-secondary, .btn-secondary {
+    color: #FFFFFF;
+    background-color: #A6A8E0 !important;
+    border-color: #A6A8E0 !important;
+}
+.btn-fill-secondary:hover, .btn-secondary:hover {
+    color: #FFFFFF;
+    background-color: #A6A8E0;
+    border-color: #A6A8E0;
+}
+.btn-check:checked + .btn-fill-primary, .btn-check:checked + .btn-primary, .btn-check:active + .btn-fill-primary, .btn-check:active + .btn-primary, .btn-fill-primary:active, .btn-primary:active, .btn-fill-primary.active, .active.btn-primary, .show > .btn-fill-primary.dropdown-toggle, .show > .dropdown-toggle.btn-primary {
+    color: white;
+    background-color: #FF75AD;
+    border-color: #FF75AD;
+}
+
+.btn-fill-primary:hover, .btn-primary:hover {
+    color: white;
+    background-color: #ff87b8;
+    border-color: #FF75AD;
+}
+
+.navbar span,a,h1,h2,h3,strong,.dropdown-toggle{
+    color:white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-weight: 600;
+}
+/*.navbar .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid white;
+  border-bottom: 0;
+  border-left: 0.3em solid white;
+}*/
+.navbar {
+    background: transparent;
+}
+
+.beat-img {
+    width: min-content;
+    height: min-content;
+    background: transparent;
+    position: relative;
+    margin-left: 10%;
+	animation: beat-animation 5s infinite alternate;
+	transform-origin: center;
+    opacity: 0.4
+}
+
+/* Heart beat animation */
+@keyframes beat-animation{
+	to { transform: scale(0.9);
+         opacity: 1}
+}

@@ -1,0 +1,243 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* theme_unique_finds
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-04 21:37+0000\n"
+"PO-Revision-Date: 2023-11-04 21:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.website_homepage_inherit_home
+msgid ""
+"<font class=\"text-o-color-3\">\n"
+"                                            <font class=\"text-o-color-3\">\n"
+"                                                <font class=\"text-o-color-3\"> fnf dh fjhfg jhfgd jfgnjf jfd jfdj\n"
+"                                                    fdj fdj fdjfr jsr jhsrtjh sftj sftjh sftj srtjh srftj srtj sftjsftjhsrtf\n"
+"                                                    jstj sftj sjsr tjsr jrt jstrj srtj srtj srtj srtj srtj srtj srtj srtj\n"
+"                                                    srtjs rjsrt jsrt jsrtj srt\n"
+"                                                </font>\n"
+"                                            </font>\n"
+"                                        </font>"
+msgstr ""
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.website_homepage_inherit_home
+msgid ""
+"<font class=\"text-o-color-3\"> fnf dh fjhfg jhfgd jfgnjf jfd jfdj fdj fdj\n"
+"                                            fdjfr jsr jhsrtjh sftj sftjh sftj srtjh srftj srtj sftjsftjhsrtf jstj sftj sjsr\n"
+"                                            tjsr jrt jstrj srtj srtj srtj srtj srtj srtj srtj srtj srtjs rjsrt jsrt jsrtj\n"
+"                                            srt j\n"
+"                                            <font class=\"text-o-color-3\"> fnf dh fjhfg jhfgd jfgnjf jfd jfdj fdj\n"
+"                                                fdj fdjfr jsr jhsrtjh sftj sftjh sftj srtjh srftj srtj sftjsftjhsrtf jstj\n"
+"                                                sftj sjsr tjsr jrt jstrj srtj srtj srtj srtj srtj srtj srtj srtj srtjs rjsrt\n"
+"                                                jsrt jsrtj srt j\n"
+"                                                <br/>\n"
+"                                            </font>\n"
+"                                        </font>"
+msgstr ""
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid ""
+"<i class=\"fa fa-1x fa-fw fa-envelope "
+"me-2\"/><span>info@yourcompany.example.com</span>"
+msgstr ""
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid ""
+"<i class=\"fa fa-map-marker fa-fw me-2\"/><span class=\"o_force_ltr\">3575 "
+"Fake Buena Vista Avenue</span>"
+msgstr ""
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid ""
+"<i class=\"fa fa-phone fa-fw me-2\"/><span class=\"o_force_ltr\">+1 (650) "
+"555-0111</span>"
+msgstr ""
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "<span class=\"s_website_form_label_content\">Company</span>"
+msgstr "<span class=\"s_website_form_label_content\">الشركة</span>"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "<span class=\"s_website_form_label_content\">Email To</span>"
+msgstr "<span class=\"s_website_form_label_content\">البريد الإلكتروني</span>"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid ""
+"<span class=\"s_website_form_label_content\">Email</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">البريد الإلكتروني</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid ""
+"<span class=\"s_website_form_label_content\">Name</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">الإسم</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "<span class=\"s_website_form_label_content\">Phone Number</span>"
+msgstr "<span class=\"s_website_form_label_content\">رقم الجوال</span>"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid ""
+"<span class=\"s_website_form_label_content\">Question</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">السؤال</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid ""
+"<span class=\"s_website_form_label_content\">Subject</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">الموضوع</span>\n"
+"                                                            <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.website_homepage_inherit_home
+msgid ""
+"<span style=\"font-size: 18px;\">\n"
+"                                            <font class=\"text-black\">Start Now</font>\n"
+"                                        </span>"
+msgstr ""
+"<span style=\"font-size: 18px;\">\n"
+"                                            <font class=\"text-black\">إبدأ الآن</font>\n"
+"                                        </span>"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.left_login_template
+msgid "Database"
+msgstr "قاعدة البيانات"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.left_login_template
+msgid "Don't have an account?"
+msgstr "لا تملك حساب؟"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.left_login_template
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "Email Id"
+msgstr "البريد الإلكتروني"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid ""
+"Got a question about Unique Finds? Are you interested or\n"
+"                                    have somesuggestions, Contact us."
+msgstr ""
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.left_login_template
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.left_login_template
+msgid "Log in as superuser"
+msgstr "تسجيل الدخول"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.left_login_layout
+msgid "Logo"
+msgstr "الايقونة"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "My Company"
+msgstr "الشركة"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "Name"
+msgstr "الإسم"
+
+#. module: theme_unique_finds
+#. odoo-python
+#: code:addons/theme_unique_finds/controllers/main.py:0
+#, python-format
+msgid ""
+"Only employees can access this database. Please contact the administrator."
+msgstr ""
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.left_login_template
+msgid "Password"
+msgstr "كلمة السر"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "Phone Number"
+msgstr "رقم الجوال"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "Question"
+msgstr "السؤال"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "Reach out to us!"
+msgstr ""
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.left_login_template
+msgid "Reset Password"
+msgstr "إعادة تعيين كلمة السر"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.left_login_template
+msgid ""
+"Select <i class=\"fa fa-database\" role=\"img\" aria-label=\"Database\" "
+"title=\"Database\"/>"
+msgstr ""
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "Subject"
+msgstr "الموضوع"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "Submit"
+msgstr "إرسال"
+
+#. module: theme_unique_finds
+#. odoo-python
+#: code:addons/theme_unique_finds/controllers/main.py:0
+#, python-format
+msgid "Wrong login/password"
+msgstr "خطأ في كلمة السر"
+
+#. module: theme_unique_finds
+#: model_terms:theme.ir.ui.view,arch:theme_unique_finds.contactus_page_custom
+msgid "Your Company"
+msgstr "الشركة"

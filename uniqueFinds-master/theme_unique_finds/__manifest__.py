@@ -11,6 +11,9 @@
       'views/login_template.xml',
       'views/backgrounds.xml',
       'views/home.xml',
+      'views/product.xml',
+      'views/portal_my_details.xml',
+      'views/contact_us.xml',
 
    ],
    'assets': {

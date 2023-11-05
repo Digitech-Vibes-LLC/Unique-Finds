@@ -1,0 +1,13 @@
+.contact_us_form_container textarea.form-control {
+    min-height: calc(5.5em + 0.75rem + 2px);
+}
+
+.contact_us_form_container input{
+   background: #dedfe1;
+}
+.contact_us_form_container input,textarea{
+    background: #dedfe1;
+}
+.contact_us_form_container{
+    color:white;
+}

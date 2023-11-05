@@ -1,0 +1,23 @@
+.o_portal_my_home h3{
+    color: #A6A8E0 !important;
+}
+.o_portal_docs a{
+    background: #b2d0e1;
+    margin-bottom: 1px;
+}
+.o_portal_docs .text-bg-secondary {
+    color: #FFFFFF !important;
+    background-color: #51c1d7 !important;
+}
+.o_portal_my_details{
+    color:white !important;
+}
+.o_portal_my_security{
+    color: #A6A8E0;
+}
+.o_portal_my_details h4,a{
+    color: #A6A8E0;
+}
+.o_portal_my_details h4 a{
+    color: #A6A8E0;
+}

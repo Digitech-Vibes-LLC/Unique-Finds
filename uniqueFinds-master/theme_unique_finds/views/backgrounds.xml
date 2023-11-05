@@ -3,7 +3,9 @@
         <xpath expr="//div[@id='wrapwrap']/header" position="after">
             <div class="row">
 <!--                <img src="/theme_unique_finds/static/src/img/logo1.png" style="animation: fa-spin 1s infinite steps(12);"/>-->
-                <img src="/theme_unique_finds/static/src/img/logo1.png" class="beat-img" style=""/>
+                <t t-if="request.httprequest.full_path != '/contactus?'">
+                    <img src="/theme_unique_finds/static/src/img/logo1.png" class="beat-img" style=""/>
+                </t>
             </div>
         </xpath>
         <xpath expr="//div[@id='wrapwrap']" position="attributes">

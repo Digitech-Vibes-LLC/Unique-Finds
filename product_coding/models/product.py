@@ -42,6 +42,7 @@ class ProductTemplate(models.Model):
 
     @api.onchange('categ_id')
     def onchange_categ_id(self):
+        print ("JJJJJJJJJJJJteeeeeeeest")
         if self.categ_id :
             product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('product_code', '!=', False)], order="id DESC", limit=1)
             print ("JJJJJJJJproduct_id",product_id)

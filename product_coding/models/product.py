@@ -8,18 +8,6 @@ class ProductCategory(models.Model):
 
     category_code = fields.Char("Code")
 
-    @api.model_create_multi
-    def create(self, vals_list):
-        for val in vals_list :
-            category_id = self.search([('parent_id', '=', False)], order="id DESC", limit=1)
-            if category_id:
-                val['category_code'] = int(category_id.category_code) + 1
-            else :
-                val['category_code'] = 1  
-
-        category = super().create(vals_list)  
-        return category
-
     @api.onchange('parent_id')
     def onchange_parent_id(self):
         if self.parent_id :

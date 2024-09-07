@@ -5,17 +5,7 @@
             <field name="name">Product Category</field>
             <field name="code">product.category.sequence</field>
             <field name="prefix">TP-</field>
-            <!--field name="padding">6</field-->
             <field name="company_id" eval="False"/>
         </record>
-
-        <record id="ir_sequence_product" model="ir.sequence">
-            <field name="name">Product</field>
-            <field name="code">product.sequence</field>
-            <!--field name="padding">6</field-->
-            <field name="company_id" eval="False"/>
-        </record>
-
-
     </data>
 </odoo>

@@ -11,8 +11,8 @@ class ProductCategory(models.Model):
     @api.onchange('parent_id')
     def onchange_parent_id(self):
         if self.parent_id :
-            category_id = self.search([('parent_id', '=', self.parent_id.id),('id', '<', self._origin.id)], order="id DESC", limit=1)
-            if category_id.category_code : 
+            category_id = self.search([('parent_id', '=', self.parent_id.id),('category_code', '!=', False)], order="name DESC", limit=1)
+            if category_id : 
                 last_code = category_id.category_code.split("-")
                 code = int(last_code[-1]) + 1
             else :

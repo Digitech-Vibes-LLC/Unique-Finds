@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-
+import logging
 from odoo import models, fields, api
+
+_logger = logging.getLogger(__name__)
 
 
 class ProductCategory(models.Model):
@@ -42,6 +44,7 @@ class ProductTemplate(models.Model):
 
     @api.onchange('categ_id')
     def onchange_categ_id(self):
+        _logger.error("The method _run_%s doesn't exist on the procurement rules")
         if self.categ_id :
             product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('product_code', '!=', False)], order="id DESC", limit=1)
             if product_id.product_code : 

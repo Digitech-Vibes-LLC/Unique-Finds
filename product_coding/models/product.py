@@ -8,6 +8,15 @@ class ProductCategory(models.Model):
 
     category_code = fields.Char("Code")
 
+    @api.model_create_multi
+    def create(self, vals_list):
+        for val in vals_list :
+            if not val['parent_id'] :
+                val['category_code'] = self.env['ir.sequence'].next_by_code('product.category.sequence')
+            
+        category = super().create(vals_list)  
+        return category
+
     @api.onchange('parent_id')
     def onchange_parent_id(self):
         if self.parent_id :

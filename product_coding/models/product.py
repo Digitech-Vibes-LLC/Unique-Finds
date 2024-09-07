@@ -50,4 +50,5 @@ class ProductTemplate(models.Model):
                 code = int(last_code[-1]) + 1
             else :
                 code = 1
-            self.product_code = "TP-" + self.categ_id.category_code + '-' + str(code)
+            if self.categ_id.category_code :
+                self.product_code = self.categ_id.category_code + '-' + str(code)

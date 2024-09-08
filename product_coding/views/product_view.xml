@@ -22,5 +22,33 @@
         </field>
     </record>
 
+<record id="code_wizard" model="ir.ui.view">
+        <field name="name">product.code</field>
+        <field name="model">product.code</field>
+        <field name="arch" type="xml">
+            <form string="Make Accrual Entries">
+		    <field name="categ_id"/>
+                <footer>
+                    <button string='change' name="change" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+        <record id="code_wizard_action" model="ir.actions.act_window">
+            <field name="name">product.code</field>
+            <field name="res_model">product.code</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+	<menuitem
+            id="change_menu"
+            name="change"
+            parent="stock.menu_stock_inventory_control"
+            action="code_wizard_action"
+            sequence="10"/>
+
     </data>
 </odoo>

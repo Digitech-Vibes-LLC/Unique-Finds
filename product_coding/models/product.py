@@ -64,8 +64,9 @@ class code(models.TransientModel):
     def change(self) :
         if self.categ_id :
             code = 1
-            for line in self.env['product.product'].search([('categ_id', '=', self.categ_id.id)]) :
+            products = self.env['product.product'].search([('categ_id', '=', self.categ_id.id)])
+            for line in products :
                 line.product_code = self.categ_id.category_code + '-' + str(code)
                 code +=1
-                raise UserError(code)
+                raise UserError(products)
 

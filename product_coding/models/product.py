@@ -66,9 +66,6 @@ class code(models.TransientModel):
             code = 1
             products = self.env['product.product'].search([('categ_id', '=', self.categ_id.id)])
             for line in products :
-                _logger.error("The method _run_%s doesn't exist on the procurement rules line" % line)
-                line.write({'product_code':self.categ_id.category_code + '-' + str(code)})
+                line.default_code :self.categ_id.category_code + '-' + str(code)
                 code +=1
-                _logger.error("The method _run_%s doesn't exist on the procurement rules code" % line.product_code)
-                #raise UserError(line.product_code) 
 

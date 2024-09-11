@@ -66,6 +66,6 @@ class code(models.TransientModel):
             code = 1
             products = self.env['product.product'].search([('categ_id', '=', self.categ_id.id)])
             for line in products :
-                line.default_code :self.categ_id.category_code + '-' + str(code)
+                line.default_code  = self.categ_id.category_code + '-' + str(code)
                 code +=1
 

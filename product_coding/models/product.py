@@ -68,5 +68,5 @@ class code(models.TransientModel):
             for line in products :
                 line.product_code = self.categ_id.category_code + '-' + str(code)
                 code +=1
-                raise UserError(products)
+                raise UserError(products) 
 

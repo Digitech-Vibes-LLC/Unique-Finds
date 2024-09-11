@@ -67,5 +67,5 @@ class code(models.TransientModel):
             for line in self.env['product.product'].search([('categ_id', '=', self.categ_id.id)]) :
                 line.product_code = self.categ_id.category_code + '-' + str(code)
                 code +=1
-                raise UserError(line,">>>>>>>>>>>>>>>>>",code)
+                raise UserError(code)
 

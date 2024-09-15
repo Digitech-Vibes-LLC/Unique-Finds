@@ -43,18 +43,20 @@ class ProductTemplate(models.Model):
 
     product_code = fields.Char("Code")
 
+class Product(models.Model):
+    _inherit = "product.product"
+
     @api.onchange('categ_id')
     def onchange_categ_id(self):
-        _logger.error("The method _run_%s doesn't exist on the procurement rules")
         if self.categ_id :
-            product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('product_code', '!=', False)], order="id DESC", limit=1)
-            if product_id.product_code : 
-                last_code = product_id.product_code.split("-")
+            product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('default_code', '!=', False)], order="id DESC", limit=1)
+            if product_id.default_code : 
+                last_code = product_id.default_code.split("-")
                 code = int(last_code[-1]) + 1
             else :
                 code = 1
             if self.categ_id.category_code :
-                self.product_code = self.categ_id.category_code + '-' + str(code)
+                self.default_code = self.categ_id.category_code + '-' + str(code)
 
 class code(models.TransientModel):
     _name = 'product.code'

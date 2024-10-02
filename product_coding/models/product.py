@@ -9,7 +9,8 @@ _logger = logging.getLogger(__name__)
 class ProductCategory(models.Model):
     _inherit = "product.category"
 
-    category_code = fields.Char("Code")
+    code =  fields.Char("Category Code")
+    category_code = fields.Char("Category Code")
 
     @api.model_create_multi
     def create(self, vals_list):

@@ -59,9 +59,9 @@ class code(models.TransientModel):
                 code = 1
                 variant_code = ''
                 for variant in line.product_template_variant_value_ids :
-                    _logger.info("variant>>>>>>>>>>>>>..1",variant_code)
+                    _logger.info("variant>>>>>>>>>>>>>1..%s",variant_code)
                     variant_code += '-' + variant.name
-                    _logger.info("variant>>>>>>>>>>>>>..2",variant_code)
+                    _logger.info("variant>>>>>>>>>>>>>..2 %s",variant_code)
                 line.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
                 code +=1
 

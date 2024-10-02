@@ -10,7 +10,7 @@ class ProductCategory(models.Model):
     _inherit = "product.category"
 
     code =  fields.Char("Category Code")
-    category_code = fields.Char("Category Code")
+    category_code = fields.Char("Complete Code")
 
     # @api.model_create_multi
     # def create(self, vals_list):
@@ -47,6 +47,11 @@ class Product(models.Model):
             if self.categ_id.category_code :
                 self.default_code = self.categ_id.category_code + '-' + str(code)
 
+class ProductAttributeValue(models.Model):
+    _inherit = "product.attribute.value"
+    
+    code =  fields.Char("Code")
+
 class code(models.TransientModel):
     _name = 'product.code'
     categ_id = fields.Many2one('product.category')
@@ -60,7 +65,10 @@ class code(models.TransientModel):
                 variant_code = ''
                 for variant in line.product_template_variant_value_ids :
                     _logger.info("variant>>>>>>>>>>>>>1..%s",variant_code)
-                    variant_code += '-' + variant.name
+                    if variant.code :
+                        variant_code += '-' + variant.code
+                    else :
+                        variant_code += '-' + variant.name
                     
                 line.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
                 _logger.info("code>>>>>>>>>>>>>..2 %s",code)

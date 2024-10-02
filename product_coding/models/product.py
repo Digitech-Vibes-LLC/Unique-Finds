@@ -12,33 +12,21 @@ class ProductCategory(models.Model):
     code =  fields.Char("Category Code")
     category_code = fields.Char("Category Code")
 
-    @api.model_create_multi
-    def create(self, vals_list):
-        for val in vals_list :
-            if not val['parent_id'] :
-                val['category_code'] = self.env['ir.sequence'].next_by_code('product.category.sequence')
+    # @api.model_create_multi
+    # def create(self, vals_list):
+    #     for val in vals_list :
+    #         if not val['parent_id'] :
+    #             val['category_code'] = self.env['ir.sequence'].next_by_code('product.category.sequence')
             
-        category = super().create(vals_list)  
-        return category
+    #     category = super().create(vals_list)  
+    #     return category
 
-    @api.onchange('parent_id')
+    @api.onchange('parent_id','code')
     def onchange_parent_id(self):
+        self.category_code = self.code
         if self.parent_id :
-            category_id = self.search([('parent_id', '=', self.parent_id.id),('category_code', '!=', False)], order="name DESC", limit=1)
-            if category_id : 
-                last_code = category_id.category_code.split("-")
-                code = int(last_code[-1]) + 1
-            else :
-                code = 1
-            if self.parent_id.category_code :
-                self.category_code = self.parent_id.category_code + '-' + str(code)
-        else :
-            category_id = self.search([('id', '<', self._origin.id)], order="id DESC", limit=1)
-            if category_id :
-                self.category_code = int(category_id.category_code) + 1
-            else :
-                self.category_code = 1
-
+            self.category_code = self.parent_id.category_code + '-' + self.category_code
+            
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 

@@ -65,8 +65,8 @@ class code(models.TransientModel):
                 variant_code = ''
                 for variant in line.product_template_variant_value_ids :
                     _logger.info("variant>>>>>>>>>>>>>1..%s",variant_code)
-                    if variant.code :
-                        variant_code += '-' + variant.code
+                    if variant.product_attribute_value_id.code :
+                        variant_code += '-' + variant.product_attribute_value_id.code
                     else :
                         variant_code += '-' + variant.name
                     

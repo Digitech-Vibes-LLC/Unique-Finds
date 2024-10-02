@@ -65,9 +65,14 @@ class code(models.TransientModel):
 
     def change(self) :
         if self.categ_id :
-            code = 1
             products = self.env['product.product'].search([('categ_id', '=', self.categ_id.id)])
             for line in products :
-                line.default_code  = self.categ_id.category_code + '-' + str(code)
+                code = 1
+                variant_code = ''
+                for variant in line.product_template_variant_value_ids :
+                    _logger.info("variant>>>>>>>>>>>>>..1",variant_code)
+                    variant_code += variant.name
+                    _logger.info("variant>>>>>>>>>>>>>..2",variant_code)
+                line.default_code  = self.categ_id.category_code + '-' + str(code) +  '-' + variant_code
                 code +=1
 

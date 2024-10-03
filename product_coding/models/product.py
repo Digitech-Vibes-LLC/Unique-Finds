@@ -60,7 +60,7 @@ class code(models.TransientModel):
     def change(self) :
         if self.categ_id :
             products = self.env['product.product'].search([('categ_id', '=', self.categ_id.id)])
-            code = 1
+            code = 1000
             for line in products :
                 variant_code = ''
                 for variant in line.product_template_variant_value_ids :

@@ -66,7 +66,7 @@ class code(models.TransientModel):
             # if isinstance(last_code[2], int):
             #if int(last_code[2]):
                 #line.product_code = None
-            line.product_code = last_code[2]
+            line.product_code = line.default_code
             _logger.info("line.product_code>>>>>>>>>>>>>..2 %s",line.product_code)
         # if self.categ_id :
         #     products = self.env['product.product'].search([('categ_id', '=', self.categ_id.id)])

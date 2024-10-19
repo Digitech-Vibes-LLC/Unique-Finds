@@ -63,10 +63,11 @@ class code(models.TransientModel):
         for line in products :
             if line.default_code :
                 numbers = re.findall(r'\d+', line.default_code)
+                _logger.info("numbers>>>>>>>>>>>>>..2 %s",int(numbers[0]))
                 for num in numbers :
                 #last_code = line.default_code.split("-")
                     _logger.info("numbers>>>>>>>>>>>>>..2 %s",int(num))
-                    break
+                    #break
                 #_logger.info("code>>>>>>>>>>>>>..2 %s",last_code[2])
     
                 # if isinstance(last_code[2], int):

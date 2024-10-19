@@ -40,9 +40,9 @@ class Product(models.Model):
     @api.onchange('categ_id')
     def onchange_categ_id(self):
         if self.categ_id :
-            product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id)], order="product_code DESC", limit=1)
+            product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('default_code','!=', False)], order="product_code DESC", limit=1)
             _logger.info("variant>>>>>>>>>>>>>1..%s",product_id)
-            if product_id.default_code : 
+            if product_id : 
                 code = int(product_id.product_code)+ 1
             else :
                 code = 1000

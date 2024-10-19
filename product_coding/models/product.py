@@ -65,20 +65,9 @@ class code(models.TransientModel):
         for line in products:
             if line.default_code:
                 _logger.info("Product ID: %s", line)
-                numbers = re.findall(r'\d+', line.default_code)
-                
-                if numbers:
-                    # Use the number found in default_code as a base
-                    base_code = int(numbers[0])
-                    unique_code = base_code
+                numbers = re.findall(r'\d+', line.default_code
 
-                    # Ensure the unique_code is truly unique
-                    while unique_code in existing_codes:
-                        unique_code += 1  # Increment until a unique code is found
-
-                    existing_codes.add(unique_code)
-                    line.product_code = str(unique_code)  # Assign the unique product code
-                    _logger.info("Assigned unique product_code: %s to product ID: %s", line.product_code, line.id)
+                line.product_code = None # Assign the unique product code
                 
                 #last_code = line.default_code.split("-")
                     

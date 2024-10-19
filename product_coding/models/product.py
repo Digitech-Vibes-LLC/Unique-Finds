@@ -38,10 +38,10 @@ class Product(models.Model):
     @api.onchange('categ_id')
     def onchange_categ_id(self):
         if self.categ_id :
-            product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('default_code', '!=', False)], order="id DESC", limit=1)
+            product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('default_code', '!=', False),('product_code', '!=', False)], order="id DESC", limit=1)
             if product_id.default_code : 
                 last_code = product_id.default_code.split("-")
-                code = int(last_code[-1]) + 1
+                code = product_id.product_code+ 1
             else :
                 code = 1
             if self.categ_id.category_code :
@@ -58,22 +58,28 @@ class code(models.TransientModel):
 
 
     def change(self) :
-        # if self.categ_id :
-        products = self.env['product.product'].search([('default_code', '!=', False)])
-        #code = 1000
+        products = self.env['product.product'].search([('default_code', '!=',False)])
         for line in products :
             _logger.info("code>>>>>>>>>>>>>..2 %s",line.default_code)
             last_code = line.default_code.split("-")
-            line.product_code = last_code[2]
-                # variant_code = ''
-                # for variant in line.product_template_variant_value_ids :
-                #     _logger.info("variant>>>>>>>>>>>>>1..%s",variant_code)
-                #     if variant.product_attribute_value_id.code :
-                #         variant_code += '-' + variant.product_attribute_value_id.code
-                #     else :
-                #         variant_code += '-' + variant.name
-                    
-                # line.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
-                # _logger.info("code>>>>>>>>>>>>>..2 %s",code)
-                # code +=1
+            line.product_code = ''
+        # if self.categ_id :
+        #     products = self.env['product.product'].search([('categ_id', '=', self.categ_id.id)])
+        # code = 1000
+        # for line in products :
+        #     # _logger.info("code>>>>>>>>>>>>>..2 %s",line.default_code)
+        #     # last_code = line.default_code.split("-")
+        #     # line.product_code = last_code[2]
+        #     variant_code = ''
+        #     for variant in line.product_template_variant_value_ids :
+        #         _logger.info("variant>>>>>>>>>>>>>1..%s",variant_code)
+        #         if variant.product_attribute_value_id.code :
+        #             variant_code += '-' + variant.product_attribute_value_id.code
+        #         else :
+        #             variant_code += '-' + variant.name
+                
+        #     line.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
+        #     line.product_code = code
+        #     _logger.info("code>>>>>>>>>>>>>..2 %s",code)
+        #     code +=1
 

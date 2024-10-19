@@ -67,7 +67,7 @@ class code(models.TransientModel):
 
 
     def change(self) :
-        products = self.env['product.product'].search([('categ_id', '=', self.categ_id.id),('default_code', '!=', False)], order="id DESC", limit=1])        
+        products = self.env['product.product'].search([])        
         for line in products:
             if line.default_code:
                 _logger.info("Product ID: %s", line)

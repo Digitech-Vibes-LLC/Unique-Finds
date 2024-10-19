@@ -59,12 +59,12 @@ class code(models.TransientModel):
 
 
     def change(self) :
-        products = self.search([], order="default_code")
+        products = self.env['product.product'].search([], order="default_code")
         existing_codes = set()  # To keep track of already assigned product codes
         
         for line in products:
             if line.default_code:
-                _logger.info("Product ID: %s", line.id)
+                _logger.info("Product ID: %s", line)
                 numbers = re.findall(r'\d+', line.default_code)
                 
                 if numbers:

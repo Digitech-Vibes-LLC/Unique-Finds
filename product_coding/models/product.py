@@ -62,6 +62,7 @@ class code(models.TransientModel):
             products = self.env['product.product'].search([('default_code', '!=', False)])
             #code = 1000
             for line in products :
+                _logger.info("code>>>>>>>>>>>>>..2 %s",line.default_code)
                 last_code = line.default_code.split("-")
                 line.product_code = last_code[2]
                 # variant_code = ''

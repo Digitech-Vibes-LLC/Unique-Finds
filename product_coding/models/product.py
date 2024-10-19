@@ -40,7 +40,7 @@ class Product(models.Model):
     @api.onchange('categ_id')
     def onchange_categ_id(self):
         if self.categ_id :
-            product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id)], order="id DESC", limit=1)
+            product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id)], order="product_code DESC", limit=1)
             if product_id.default_code : 
                 code = int(product_id.product_code)+ 1
             else :

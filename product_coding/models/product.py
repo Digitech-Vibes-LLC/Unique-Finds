@@ -28,14 +28,15 @@ class ProductCategory(models.Model):
         if self.parent_id :
             self.category_code = self.parent_id.category_code + '-' + self.category_code
             
-class ProductTemplate(models.Model):
-    _inherit = "product.template"
+# class ProductTemplate(models.Model):
+#     _inherit = "product.template"
 
+#     product_code = fields.Char("Code")
+
+class Product(models.Model):
+    _inherit = "product.product"
+    
     product_code = fields.Char("Code")
-
-# class Product(models.Model):
-#     _inherit = "product.product"
-
 #     @api.onchange('categ_id')
 #     def onchange_categ_id(self):
 #         if self.categ_id :

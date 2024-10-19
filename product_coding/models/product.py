@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
+import re
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError, UserError
 
@@ -61,15 +62,16 @@ class code(models.TransientModel):
         products = self.env['product.product'].search([],order="default_code")
         for line in products :
             if line.default_code :
-                last_code = line.default_code.split("-")
-                _logger.info("code>>>>>>>>>>>>>..2 %s",line.id)
-                _logger.info("code>>>>>>>>>>>>>..2 %s",last_code[2])
+                numbers = re.findall(r'\d+', line.default_code)
+                #last_code = line.default_code.split("-")
+                _logger.info("numbers>>>>>>>>>>>>>..2 %s",numbers)
+                #_logger.info("code>>>>>>>>>>>>>..2 %s",last_code[2])
     
                 # if isinstance(last_code[2], int):
                 #if int(last_code[2]):
                     #line.product_code = None
-                line.product_code = last_code[2]
-                _logger.info("line.product_code>>>>>>>>>>>>>..2 %s",line.product_code)
+                #line.product_code = last_code[2]
+                #_logger.info("line.product_code>>>>>>>>>>>>>..2 %s",line.product_code)
         # if self.categ_id :
         #     products = self.env['product.product'].search([('categ_id', '=', self.categ_id.id)])
         # code = 1000

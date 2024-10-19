@@ -54,7 +54,7 @@ class Product(models.Model):
                     else :
                         variant_code += '-' + variant.name
                     
-                line.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
+                self.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
 
 class ProductAttributeValue(models.Model):
     _inherit = "product.attribute.value"

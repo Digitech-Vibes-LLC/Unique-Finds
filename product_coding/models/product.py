@@ -42,7 +42,7 @@ class Product(models.Model):
         if self.categ_id :
             product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id)], order="id DESC", limit=1)
             if product_id.default_code : 
-                code = product_id.product_code+ 1
+                code = int(product_id.product_code)+ 1
             else :
                 code = 1000
             if self.categ_id.category_code :

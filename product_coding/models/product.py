@@ -62,7 +62,8 @@ class code(models.TransientModel):
         for line in products :
             _logger.info("code>>>>>>>>>>>>>..2 %s",line.default_code)
             last_code = line.default_code.split("-")
-            if isinstance(last_code, int):
+            #if isinstance(last_code, int):
+            if int(last_code):
                 #line.product_code = None
                 line.product_code = last_code[2]
         # if self.categ_id :

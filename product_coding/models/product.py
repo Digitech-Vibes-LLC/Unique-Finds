@@ -65,7 +65,7 @@ class code(models.TransientModel):
                 _logger.info("id>>>>>>>>>>>>>..2 %s",line.id)
                 numbers = re.findall(r'\d+', line.default_code)
                 _logger.info("numbers>>>>>>>>>>>>>..2 %s",int(numbers[0]))
-                line.product_code = int(numbers[0])
+                line.product_code = line.default_code
                 
                 #last_code = line.default_code.split("-")
                     

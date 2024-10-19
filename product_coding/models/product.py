@@ -62,6 +62,7 @@ class code(models.TransientModel):
         products = self.env['product.product'].search([],order="default_code")
         for line in products :
             if line.default_code :
+                _logger.info("id>>>>>>>>>>>>>..2 %s",line.id)
                 numbers = re.findall(r'\d+', line.default_code)
                 _logger.info("numbers>>>>>>>>>>>>>..2 %s",int(numbers[0]))
                 line.product_code = int(numbers[0]

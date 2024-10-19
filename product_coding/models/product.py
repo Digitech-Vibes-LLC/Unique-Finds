@@ -37,17 +37,24 @@ class Product(models.Model):
     _inherit = "product.product"
     
     product_code = fields.Char("Code")
-#     @api.onchange('categ_id')
-#     def onchange_categ_id(self):
-#         if self.categ_id :
-#             product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('default_code', '!=', False),('product_code', '!=', False)], order="id DESC", limit=1)
-#             if product_id.default_code : 
-#                 last_code = product_id.default_code.split("-")
-#                 code = product_id.product_code+ 1
-#             else :
-#                 code = 1
-#             if self.categ_id.category_code :
-#                 self.default_code = self.categ_id.category_code + '-' + str(code)
+    @api.onchange('categ_id')
+    def onchange_categ_id(self):
+        if self.categ_id :
+            product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id)], order="id DESC", limit=1)
+            if product_id.default_code : 
+                code = product_id.product_code+ 1
+            else :
+                code = 1000
+            if self.categ_id.category_code :
+                variant_code = ''
+                for variant in self.product_template_variant_value_ids :
+                    _logger.info("variant>>>>>>>>>>>>>1..%s",variant_code)
+                    if variant.product_attribute_value_id.code :
+                        variant_code += '-' + variant.product_attribute_value_id.code
+                    else :
+                        variant_code += '-' + variant.name
+                    
+                line.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
 
 class ProductAttributeValue(models.Model):
     _inherit = "product.attribute.value"
@@ -60,9 +67,7 @@ class code(models.TransientModel):
 
 
     def change(self) :
-        products = self.env['product.product'].search([], order="default_code")
-        existing_codes = set()  # To keep track of already assigned product codes
-        
+        products = self.env['product.product'].search([('categ_id', '=', self.categ_id.id),('default_code', '!=', False)], order="id DESC", limit=1])        
         for line in products:
             if line.default_code:
                 _logger.info("Product ID: %s", line)

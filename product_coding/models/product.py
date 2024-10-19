@@ -41,6 +41,7 @@ class Product(models.Model):
     def onchange_categ_id(self):
         if self.categ_id :
             product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id)], order="product_code DESC", limit=1)
+            _logger.info("variant>>>>>>>>>>>>>1..%s",product_id)
             if product_id.default_code : 
                 code = int(product_id.product_code)+ 1
             else :
@@ -48,7 +49,7 @@ class Product(models.Model):
             if self.categ_id.category_code :
                 variant_code = ''
                 for variant in self.product_template_variant_value_ids :
-                    _logger.info("variant>>>>>>>>>>>>>1..%s",variant_code)
+                    
                     if variant.product_attribute_value_id.code :
                         variant_code += '-' + variant.product_attribute_value_id.code
                     else :

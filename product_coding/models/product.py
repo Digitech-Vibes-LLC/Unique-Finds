@@ -33,20 +33,20 @@ class ProductTemplate(models.Model):
 
     product_code = fields.Char("Code")
 
-class Product(models.Model):
-    _inherit = "product.product"
+# class Product(models.Model):
+#     _inherit = "product.product"
 
-    @api.onchange('categ_id')
-    def onchange_categ_id(self):
-        if self.categ_id :
-            product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('default_code', '!=', False),('product_code', '!=', False)], order="id DESC", limit=1)
-            if product_id.default_code : 
-                last_code = product_id.default_code.split("-")
-                code = product_id.product_code+ 1
-            else :
-                code = 1
-            if self.categ_id.category_code :
-                self.default_code = self.categ_id.category_code + '-' + str(code)
+#     @api.onchange('categ_id')
+#     def onchange_categ_id(self):
+#         if self.categ_id :
+#             product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('default_code', '!=', False),('product_code', '!=', False)], order="id DESC", limit=1)
+#             if product_id.default_code : 
+#                 last_code = product_id.default_code.split("-")
+#                 code = product_id.product_code+ 1
+#             else :
+#                 code = 1
+#             if self.categ_id.category_code :
+#                 self.default_code = self.categ_id.category_code + '-' + str(code)
 
 class ProductAttributeValue(models.Model):
     _inherit = "product.attribute.value"

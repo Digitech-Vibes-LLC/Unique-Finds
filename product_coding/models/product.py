@@ -49,7 +49,7 @@ class Product(models.Model):
             if self.categ_id.category_code :
                 variant_code = ''
                 for variant in self.product_template_attribute_value_ids :
-                    _logger.info("variant>>>>>>>>>>>>>1..%s",x.product_attribute_value_id.name)
+                    #_logger.info("variant>>>>>>>>>>>>>1..%s",variant.product_attribute_value_id.name)
                     if variant.product_attribute_value_id.code :
                         variant_code += '-' + variant.product_attribute_value_id.code
                     else :

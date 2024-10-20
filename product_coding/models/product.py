@@ -48,14 +48,18 @@ class Product(models.Model):
                 code = 1000
             if self.categ_id.category_code :
                 variant_code = ''
-                for x in self.product_template_attribute_value_ids :
+                for variant in self.product_template_attribute_value_ids :
                     _logger.info("variant>>>>>>>>>>>>>1..%s",x.product_attribute_value_id.name)
-                for variant in self.product_template_variant_value_ids :
-                    
                     if variant.product_attribute_value_id.code :
                         variant_code += '-' + variant.product_attribute_value_id.code
                     else :
                         variant_code += '-' + variant.name
+                # for variant in self.product_template_variant_value_ids :
+                    
+                #     if variant.product_attribute_value_id.code :
+                #         variant_code += '-' + variant.product_attribute_value_id.code
+                #     else :
+                #         variant_code += '-' + variant.name
                     
                 self.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
                 self.product_code = code

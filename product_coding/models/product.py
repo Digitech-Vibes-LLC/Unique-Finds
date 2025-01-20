@@ -37,8 +37,10 @@ class Product(models.Model):
     _inherit = "product.product"
     
     product_code = fields.Char("Code")
+    
     @api.onchange('categ_id')
     def onchange_categ_id(self):
+        _logger.info("variant>>>>>>>>>>>>>1..%s",self.categ_id)
         if self.categ_id :
             product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('default_code','!=', False)], order="product_code DESC", limit=1)
             

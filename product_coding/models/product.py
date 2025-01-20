@@ -51,24 +51,70 @@ class Product(models.Model):
             if self.categ_id.category_code :
                 variant_code = ''
                 for variant in self.product_template_attribute_value_ids :
-                    #_logger.info("variant>>>>>>>>>>>>>1..%s",variant.product_attribute_value_id.name)
                     if variant.product_attribute_value_id.code :
                         variant_code += '-' + variant.product_attribute_value_id.code
                     else :
                         variant_code += '-' + variant.name
-                # for variant in self.product_template_variant_value_ids :
-                    
-                #     if variant.product_attribute_value_id.code :
-                #         variant_code += '-' + variant.product_attribute_value_id.code
-                #     else :
-                #         variant_code += '-' + variant.name
                     
                 self.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
-                _logger.info("variant>>>>>>>>>>>>>1..%s",self.default_code)
                 self.product_code = code
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        products = super().create(vals_list)
+        for product in products :
+            variant_code = ''
+            product_id = self.search([('categ_id', '=', product.categ_id.id),('id', '!=', product._origin.id),('default_code', '!=', False)], order="id DESC", limit=1)
+            if product_id.default_code : #attribute_line_ids
+                x = re.findall(r'\d+', product_id.default_code)
                 
-# class Product(models.Model):
-#     _inherit = "product.template"
+                last_code = int(x[-1]) +1
+            else :
+                last_code = 1000
+            for variant in product.product_template_attribute_value_ids :
+                    if variant.product_attribute_value_id.code :
+                        variant_code += '-' + variant.product_attribute_value_id.code
+                    else :
+                        variant_code += '-' + variant.name
+            product.default_code  = product.categ_id.category_code + '-' + str(last_code) +  variant_code
+            product.product_code = last_code
+            
+        return products
+                
+class Product(models.Model):
+    _inherit = "product.template"
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        products = super().create(vals_list)
+        for product in products :
+            variant_code = ''
+            product_id = self.env['product.product'].search([('categ_id', '=', product.categ_id.id),('default_code', '!=', False)], order="id DESC", limit=1)
+            if product_id.default_code : #attribute_line_ids
+                x = re.findall(r'\d+', product_id.default_code)
+                last_code = int(x[-1])+ 1
+            else :
+                last_code = 1000
+            if not self.attribute_line_ids :
+                product.default_code  = product.categ_id.category_code + '-' + str(last_code)
+        return products
+        
+    @api.onchange('categ_id','attribute_line_ids')
+    def onchange_categ_id(self):
+            variant_code = ''
+            product_id = self.env['product.product'].search([('categ_id', '=', self.categ_id.id),('default_code', '!=', False)], order="id DESC", limit=1)
+
+            if product_id.default_code : #attribute_line_ids
+                x = re.findall(r'\d+', product_id.default_code)
+                
+                last_code = int(x[-1]) +1
+            else :
+                last_code = 1000
+            if not self.attribute_line_ids :
+                self.default_code  = self.categ_id.category_code + '-' + str(last_code)
+            else :
+                self.default_code = None
+
         
 #     @api.onchange('categ_id')
 #     def onchange_categ_id(self):

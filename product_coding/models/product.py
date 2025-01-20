@@ -111,7 +111,8 @@ class Product(models.Model):
             else :
                 last_code = 1000
             if not self.attribute_line_ids :
-                self.default_code  = self.categ_id.category_code + '-' + str(last_code)
+                if self.categ_id.category_code :
+                    self.default_code  = self.categ_id.category_code + '-' + str(last_code)
             else :
                 self.default_code = None
 

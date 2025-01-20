@@ -66,6 +66,39 @@ class Product(models.Model):
                 self.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
                 _logger.info("variant>>>>>>>>>>>>>1..%s",self.default_code)
                 self.product_code = code
+                
+# class Product(models.Model):
+#     _inherit = "product.template"
+        
+#     @api.onchange('categ_id')
+#     def onchange_categ_id(self):
+#         _logger.info("variant>>>>>>>>>>>>>1..%s",self.categ_id)
+#         if self.categ_id :
+#             product_id = self.search([('categ_id', '=', self.categ_id.id),('id', '!=', self._origin.id),('default_code','!=', False)], order="product_code DESC", limit=1)
+            
+#             if product_id : 
+#                 code = int(product_id.product_code)+ 1
+#             else :
+#                 code = 1000
+#             if self.categ_id.category_code :
+#                 variant_code = ''
+#                 for variant in self.attribute_line_ids :
+#                     for value in self.value-ids :
+#                     #_logger.info("variant>>>>>>>>>>>>>1..%s",variant.product_attribute_value_id.name)
+#                         if value.code :
+#                             variant_code += '-' + value.code
+#                         else :
+#                             variant_code += '-' + variant.name
+#                 # for variant in self.product_template_variant_value_ids :
+                    
+#                 #     if variant.product_attribute_value_id.code :
+#                 #         variant_code += '-' + variant.product_attribute_value_id.code
+#                 #     else :
+#                 #         variant_code += '-' + variant.name
+                    
+#                 self.default_code  = self.categ_id.category_code + '-' + str(code) + variant_code
+#                 _logger.info("variant>>>>>>>>>>>>>1..%s",self.default_code)
+#                 self.product_code = code
 
 class ProductAttributeValue(models.Model):
     _inherit = "product.attribute.value"

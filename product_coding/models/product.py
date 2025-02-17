@@ -4,7 +4,7 @@ import re
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError, UserError
 
-_logger = logging.getLogger(__name__)
+_logger = logging.getLogger(__name__)     
 
 
 class ProductCategory(models.Model):
